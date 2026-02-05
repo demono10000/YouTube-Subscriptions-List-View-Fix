@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Subscriptions List View Fix",
+  "version": "1.0",
+  "description": "Restores the classic list view for YouTube subscriptions grid layout.",
+  "author": "Demono10000",
+  "icons": {
+    "48": "icon48.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/feed/subscriptions*"],
+        "js": ["content.js"],
+        "css": ["styles.css"],
+        "run_at": "document_end"
+      }
+    ],
+    "permissions": []
+  }

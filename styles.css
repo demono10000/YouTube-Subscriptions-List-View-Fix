@@ -1,0 +1,107 @@
+/* --- 1. RESET GRID TO LIST LAYOUT --- */
+ytd-browse[page-subtype="subscriptions"] ytd-rich-grid-renderer {
+    --ytd-rich-grid-items-per-row: 1 !important;
+    --ytd-rich-grid-posts-per-row: 1 !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+}
+
+ytd-rich-grid-row, 
+ytd-rich-grid-row > div {
+    display: contents !important;
+}
+
+ytd-rich-item-renderer {
+    width: 100% !important;
+    margin: 0 0 12px 0 !important;
+    display: block !important;
+}
+
+/* --- 2. FORCE HORIZONTAL LAYOUT (Thumbnail | Text) --- */
+ytd-rich-item-renderer yt-lockup-view-model,
+.yt-lockup-view-model--vertical {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-bottom: 12px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- 3. THUMBNAIL DIMENSIONS (Strict 16:9) --- */
+.yt-lockup-view-model__content-image {
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+    
+    /* 300px * 9 / 16 = 168.75px */
+    height: 168px !important; 
+    min-height: 168px !important;
+    max-height: 168px !important;
+    
+    flex: 0 0 300px !important;
+    margin-right: 20px !important;
+}
+
+/* Force internal containers to respect parent dimensions */
+.yt-lockup-view-model__content-image yt-thumbnail-view-model,
+.yt-lockup-view-model__content-image .ytThumbnailViewModelImage {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 168px !important;
+}
+
+/* Image styling */
+.yt-lockup-view-model__content-image img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 168px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+}
+
+/* --- 4. CONTENT METADATA (Right Side) --- */
+.yt-lockup-view-model__metadata {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    position: relative !important;
+}
+
+.yt-lockup-view-model__title {
+    font-size: 1.2rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+    max-width: 90% !important; /* Leave space for menu button */
+    display: block !important;
+    overflow: hidden !important;
+    max-height: 5.6rem !important;
+}
+
+.yt-content-metadata-view-model__metadata-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    font-size: 0.95rem !important;
+    color: #aaa !important;
+    margin-top: 4px !important;
+}
+
+yt-lockup-metadata-view-model {
+    gap: 10px !important;
+}
+
+/* Position the 3-dot menu button */
+.yt-lockup-metadata-view-model__menu-button {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+}
+
+/* --- 5. HIDE UNWANTED ELEMENTS --- */
+ytd-rich-section-renderer, /* Shorts sections */
+ytd-shelf-renderer {       /* "Latest posts" shelves */
+    display: none !important;
+}
