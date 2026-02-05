@@ -27,7 +27,9 @@ This project was developed with the collaborative assistance of **Grok** and **G
 ## Support
 If you find this extension helpful, feel free to support me!
 
-<a href="https://www.buymeacoffee.com/demono10000"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a pizza&emoji=🍕&slug=demono10000&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/demono10000)
+
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
